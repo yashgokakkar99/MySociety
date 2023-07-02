@@ -4,6 +4,8 @@ import Home from "./components/Home.jsx";
 import Society from "./components/Society.jsx";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
+import UserLogin from "./components/UserLogin.jsx";
+import UserReg from "./components/UserReg.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<UserReg />}></Route>
           <Route path="/society" element={<Society />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
