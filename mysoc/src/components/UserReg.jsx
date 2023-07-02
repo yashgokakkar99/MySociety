@@ -1,11 +1,20 @@
 import React from "react";
+import { useState } from "react";
 
 function UserReg() {
+  const [data,setData] = useState({
+    name:'',
+    username:'',
+    password:''
+  })
+  const registerUser = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="border-2 border-red-400 rounded-lg flex justify-center w-80 item-center m-auto p-4">
-      <form method="POST">
+      <form method="POST" onSubmit={registerUser}>
         <div>
-        <div className="flex justify-center font-bold text-red-700">
+          <div className="flex justify-center font-bold text-red-700">
             User Registration
           </div>
           <div className="text-red-700 font-bold mt-4">
@@ -17,6 +26,8 @@ function UserReg() {
             placeholder="Alex Watson"
             name="name"
             id="name"
+            value={data.name}
+            onChange={(e)=>setData({...data,name:e.target.value})}
           ></input>
         </div>
         <div>
@@ -29,6 +40,8 @@ function UserReg() {
             placeholder="alex@123"
             name="username"
             id="username"
+            value={data.username}
+            onChange={(e)=>setData({...data,username:e.target.value})}
           ></input>
         </div>
         <div>
@@ -41,6 +54,8 @@ function UserReg() {
             placeholder="XXXXXXXX"
             name="password"
             id="password"
+            value={data.password}
+            onChange={(e)=>setData({...data,password:e.target.value})}
           ></input>
         </div>
         <div>
