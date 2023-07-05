@@ -1,18 +1,41 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
+
+
+
+
 
 function UserReg() {
-  const [data,setData] = useState({
-    name:'',
-    username:'',
-    password:''
-  })
-  const registerUser = (e) => {
+
+
+
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+
+
+  const handleRegistration = async (e) => {
     e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8000/api/register/user", {
+        name,
+        username,
+        password,
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+
+
+  
   return (
     <div className="border-2 border-red-400 rounded-lg flex justify-center w-80 item-center m-auto p-4">
-      <form method="POST" onSubmit={registerUser}>
+      <form onSubmit={handleRegistration}>
         <div>
           <div className="flex justify-center font-bold text-red-700">
             User Registration
@@ -22,12 +45,12 @@ function UserReg() {
           </div>
           <input
             className="border-2"
-            type="name"
+            type="text"
             placeholder="Alex Watson"
             name="name"
             id="name"
-            value={data.name}
-            onChange={(e)=>setData({...data,name:e.target.value})}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           ></input>
         </div>
         <div>
@@ -40,8 +63,8 @@ function UserReg() {
             placeholder="alex@123"
             name="username"
             id="username"
-            value={data.username}
-            onChange={(e)=>setData({...data,username:e.target.value})}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           ></input>
         </div>
         <div>
@@ -54,8 +77,8 @@ function UserReg() {
             placeholder="XXXXXXXX"
             name="password"
             id="password"
-            value={data.password}
-            onChange={(e)=>setData({...data,password:e.target.value})}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
         <div>

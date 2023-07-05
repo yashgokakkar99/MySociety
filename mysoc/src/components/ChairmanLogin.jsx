@@ -1,9 +1,24 @@
 import React from "react";
+import { useState } from "react";
+import axios from 'axios';
 
 function ChairmanLogin() {
+
+  const [username,setUsername]=useState('');
+  const [password,setPassword]=useState('');
+
+  const handleChairLogin = async(e)=>{
+    e.preventDefault();
+    try{
+      const response = await axios.post("http://localhost:8000/api/login/chairman",{username,password});
+      console.log(response.data)
+    }catch(error){
+      console.error(error.response.data)
+    }
+  }
   return (
     <div className="border-2 border-red-400 rounded-lg flex justify-center w-80 item-center m-auto p-4">
-      <form method="POST">
+      <form onSubmit={handleChairLogin}>
         <div>
           <div className="flex justify-center font-bold text-red-700">
             Chairman Login
@@ -17,6 +32,8 @@ function ChairmanLogin() {
             placeholder="alex@123"
             name="username"
             id="username"
+            value={username}
+            onChange={(e)=>setUsername(e.target.value)}
           ></input>
         </div>
         <div>
@@ -29,6 +46,8 @@ function ChairmanLogin() {
             placeholder="XXXXXXXX"
             name="password"
             id="password"
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
           ></input>
         </div>
         <div>

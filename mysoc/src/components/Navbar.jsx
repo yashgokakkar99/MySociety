@@ -16,6 +16,18 @@ function Navbar() {
       <Link className="menu border-2 p-2 hover:bg-red-200 rounded-lg hover:font-bold hover:text-red-700 border-red-900 w-24 flex justify-center" to={"/contact"}>
         Contact
       </Link>
+      <Link className="menu border-2 p-2 hover:bg-red-200 rounded-lg hover:font-bold hover:text-red-700 border-red-900 w-24 flex justify-center" to={"/userreg"}>
+        User Reg
+      </Link>
+      <Link className="menu border-2 p-2 hover:bg-red-200 rounded-lg hover:font-bold hover:text-red-700 border-red-900 w-24 flex justify-center" to={"/chairreg"}>
+        Chairman Reg
+      </Link>
+      <Link className="menu border-2 p-2 hover:bg-red-200 rounded-lg hover:font-bold hover:text-red-700 border-red-900 w-24 flex justify-center" to={"/userlog"}>
+        User Login
+      </Link>
+      <Link className="menu border-2 p-2 hover:bg-red-200 rounded-lg hover:font-bold hover:text-red-700 border-red-900 w-24 flex justify-center" to={"/chairlog"}>
+        Chairman Login
+      </Link>
     </div>
   );
 }

@@ -1,17 +1,25 @@
 import React from "react";
 import { useState } from "react";
+import axios from 'axios';
 
 function UserLogin() {
-  const [data,setData] = useState({
-    username:'',
-    password:''
-  })
-  const loginUser = (e) => {
-    e.preventDefault();
-  };
+
+const [username,setUsername]=useState('');
+const [password,setPassword]=useState('');
+
+const handleUserLogin = async(e)=>{
+  e.preventDefault();
+  try{
+    const response = await axios.post("http://localhost:8000/api/login/user",{username,password});
+    console.log(response.data);
+  }catch(error){
+    console.error(error.response.data)
+  }
+}
+
   return (
     <div className="border-2 border-red-400 rounded-lg flex justify-center w-80 item-center m-auto p-4">
-      <form method="POST" onSubmit={loginUser}>
+      <form onSubmit={handleUserLogin}>
         <div>
           <div className="flex justify-center font-bold text-red-700">User Login</div>
           <div className="text-red-700 font-bold mt-4">
@@ -23,8 +31,8 @@ function UserLogin() {
             placeholder="alex@123"
             name="username"
             id="username"
-            value={data.username}
-            onChange={(e)=>setData({...data,username:e.target.value})}
+            value={username}
+            onChange={(e)=>setUsername(e.target.value)}
           ></input>
         </div>
         <div>
@@ -37,8 +45,8 @@ function UserLogin() {
             placeholder="XXXXXXXX"
             name="password"
             id="password"
-            value={data.password}
-            onChange={(e)=>setData({...data,password:e.target.value})}
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
           ></input>
         </div>
         <div>
