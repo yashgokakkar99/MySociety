@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 function ChairmanLogin() {
 
@@ -17,7 +18,7 @@ function ChairmanLogin() {
     }
   }
   return (
-    <div className="border-2 border-red-400 rounded-lg flex justify-center w-80 item-center m-auto p-4">
+    <div className="hover:shadow-red-400/70 rounded-lg flex justify-center w-[400px] item-center m-auto mt-24 p-4 shadow-lg shadow-black-500/70">
       <form onSubmit={handleChairLogin}>
         <div>
           <div className="flex justify-center font-bold text-red-700">
@@ -27,7 +28,7 @@ function ChairmanLogin() {
             <label for="username">Username</label>
           </div>
           <input
-            className="border-2"
+            className="border-2 w-[250px]"
             type="text"
             placeholder="alex@123"
             name="username"
@@ -41,7 +42,7 @@ function ChairmanLogin() {
             <label for="password">Password</label>
           </div>
           <input
-            className="border-2"
+            className="border-2 w-[250px]"
             type="password"
             placeholder="XXXXXXXX"
             name="password"
@@ -52,11 +53,14 @@ function ChairmanLogin() {
         </div>
         <div>
           <input
-            className="text-red-100 w-[184px] bg-red-400 flex justify-center font-bold  mt-2 rounded-lg hover:bg-red-200 hover:text-red-700"
+            className="text-red-100 w-[250px] bg-red-400 flex justify-center font-bold  mt-2 rounded-lg hover:bg-red-200 hover:text-red-700"
             type="submit"
             value="Submit"
           ></input>
         </div>
+        <Link className="flex justify-center font-bold text-red-700 w-[250px] text-sm mt-4" to={"/chairreg"}>
+        New to mysoc? Create an account
+      </Link>
       </form>
     </div>
   );

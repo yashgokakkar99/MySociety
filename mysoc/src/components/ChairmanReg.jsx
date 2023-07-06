@@ -24,7 +24,8 @@ function ChairmanReg() {
 
 
   return (
-    <div className="border-2 border-red-400 rounded-lg flex justify-center w-80 item-center m-auto p-4">
+    
+    <div className="hover:shadow-red-400/70 rounded-lg flex justify-center w-[400px] item-center m-auto mt-24 p-4 shadow-lg shadow-black-500/70">
     <form onSubmit={handleChairRegister}>
       <div>
       <div className="flex justify-center font-bold text-red-700">
@@ -34,7 +35,7 @@ function ChairmanReg() {
           <label for="name">Full Name</label>
         </div>
         <input
-          className="border-2"
+          className="border-2 w-[250px]"
           type="name"
           placeholder="Alex Watson"
           name="name"
@@ -48,7 +49,7 @@ function ChairmanReg() {
           <label for="username">Username</label>
         </div>
         <input
-          className="border-2"
+          className="border-2 w-[250px]"
           type="text"
           placeholder="alex@123"
           name="username"
@@ -62,7 +63,7 @@ function ChairmanReg() {
           <label for="password">Password</label>
         </div>
         <input
-          className="border-2"
+          className="border-2 w-[250px]"
           type="password"
           placeholder="XXXXXXXX"
           name="password"
@@ -73,7 +74,7 @@ function ChairmanReg() {
       </div>
       <div>
         <input
-          className="text-red-100 w-[184px] bg-red-400 flex justify-center font-bold  mt-2 rounded-lg hover:bg-red-200 hover:text-red-700"
+          className="text-red-100 w-[250px] bg-red-400 flex justify-center font-bold  mt-2 rounded-lg hover:bg-red-200 hover:text-red-700"
           type="submit"
           value="Register as chairman"
         ></input>
