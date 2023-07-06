@@ -18,7 +18,7 @@ function ChairmanLogin() {
     }
   }
   return (
-    <div className="hover:shadow-red-400/70 rounded-lg flex justify-center w-[400px] item-center m-auto mt-24 p-4 shadow-lg shadow-black-500/70">
+    <div className="shadow-lg shadow-black-500/70 hover:shadow-red-400/70 rounded-lg flex justify-center w-[400px] item-center m-auto mt-24 p-4">
       <form onSubmit={handleChairLogin}>
         <div>
           <div className="flex justify-center font-bold text-red-700">

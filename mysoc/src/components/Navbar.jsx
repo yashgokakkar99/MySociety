@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="sticky bg-red-400 fixed w-full flex">
+    <div className="sticky bg-red-200 fixed w-full flex">
       <div className="flex items-center w-1/5 px-12 font-bold text-red-900 text-4xl font-brush">mysoc.in</div>
       <div className="flex justify-end w-4/5 space-x-2 p-2">
         <Link
