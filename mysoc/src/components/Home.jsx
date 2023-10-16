@@ -14,15 +14,15 @@ function Home() {
         </div>
         <div className="w-full text-lg font-brush flex justify-center flex space-x-6">
           <div className="w-[350px] rounded-lg p-2 flex justify-center hover:shadow-red-400/70 shadow-lg shadow-black-500/70 bg-red-100 hover:bg-white hover:font-bold">
-            Chairman : Mr. Ashok Gokakkar<br></br>
+            Chairman : Mr. Yash Ashok Gokakkar<br></br>
             Contact : 9527531019
           </div>
           <div className="w-[350px] rounded-lg p-2 flex justify-center hover:shadow-red-400/70 shadow-lg shadow-black-500/70 bg-red-100 hover:bg-white hover:font-bold">
-            Treasurer : Mr. Milind Chaudhari<br></br>
+            Treasurer : Mr. Shriniket Kulkarni<br></br>
             Contact : 7499822665
           </div>
           <div className="w-[350px] rounded-lg p-2 flex justify-center hover:shadow-red-400/70 shadow-lg shadow-black-500/70 bg-red-100 hover:bg-white hover:font-bold">
-            Secretary : Mr. Vaijanath Gadgile<br></br>
+            Secretary : Mr. Suyash Dighe<br></br>
             Contact : 9850818169
           </div>
         </div>
